@@ -51,5 +51,6 @@ public class Categorie {
 		this.descriptionCat = descriptionCat;
 	}
 	
+	// comentaire git
 	
 }
