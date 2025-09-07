@@ -2,6 +2,8 @@ package com.olale.produits.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,6 +16,7 @@ public class Categorie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idCat; 
+	@JsonIgnore 
 	@OneToMany(mappedBy = "categorie")
 	private List<Produit> produits;
 	private String nomCat; 
