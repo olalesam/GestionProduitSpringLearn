@@ -2,11 +2,15 @@ package com.olale.produits.entities;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 public class Produit {
@@ -16,6 +20,8 @@ public class Produit {
 	private Long idProduit;
 	private String nomProduit; 
 	private Double prixProduit;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
 	
 	@ManyToOne

@@ -33,6 +33,8 @@ public class ProduitRestController {
 	
 	@RequestMapping(method = RequestMethod.POST) 
 	public Produit createProduit(@RequestBody Produit produit) { 
+		// ⚠️ S’assurer que l’ID est nul → Hibernate fait un INSERT
+		produit.setIdProduit(null);
 		return produitService.saveProduit(produit); 
 	} 
 	
