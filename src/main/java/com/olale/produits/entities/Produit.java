@@ -14,25 +14,23 @@ import jakarta.persistence.TemporalType;
 
 @Entity
 public class Produit {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idProduit;
-	private String nomProduit; 
+	private String nomProduit;
 	private Double prixProduit;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
-	
+
 	@ManyToOne
-	private Categorie categorie; 
+	private Categorie categorie;
 
 	public Produit() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	public Produit(String nomProduit, Double prixProduit, Date dateCreation) {
 		super();
 		this.nomProduit = nomProduit;
@@ -40,43 +38,42 @@ public class Produit {
 		this.dateCreation = dateCreation;
 	}
 
-
 	public Long getIdProduit() {
 		return idProduit;
 	}
+
 	public void setIdProduit(Long idProduit) {
 		this.idProduit = idProduit;
 	}
+
 	public String getNomProduit() {
 		return nomProduit;
 	}
+
 	public void setNomProduit(String nomProduit) {
 		this.nomProduit = nomProduit;
 	}
+
 	public Double getPrixProduit() {
 		return prixProduit;
 	}
+
 	public void setPrixProduit(Double prixProduit) {
 		this.prixProduit = prixProduit;
 	}
-	
+
 	public Categorie getCategorie() {
 		return categorie;
 	}
 
-
 	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
 	}
-
-
 
 	@Override
 	public String toString() {
 		return "Produit [idProduit=" + idProduit + ", nomProduit=" + nomProduit + ", prixProduit=" + prixProduit
 				+ ", dateCreation=" + dateCreation + "]";
 	}
-	
-	
-	
+
 }
